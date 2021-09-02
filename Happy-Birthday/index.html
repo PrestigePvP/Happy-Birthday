@@ -4,8 +4,16 @@ layout: null
 
 <section>
 
-  <div>
-    <h1 style="font-size: 48px;font-size: 3.5vw;height: 100%;width: 100%;display: flex;position: fixed;align-items: center;justify-content: center;">{% timeago 1968-09-02 %}</h1>
-     <a href="https://twitter.com/TheBroJordan" target="_blank"><img src="/assets/twitter.png" alt="JordanTheBro Twitter" width="30"  height="30"/></a>
-  </div>
+    <h1 style="font-size: 48px;font-size: 3.5vw;height: 100%;width: 100%;display: flex;position: fixed;align-items: center;justify-content: center;">
+        {% timeago 1968-09-02 %}</h1>
+    <a href="https://twitter.com/TheBroJordan" target="_blank"><img src="/assets/twitter.png"
+                                                                    alt="JordanTheBro Twitter" width="30"
+                                                                    height="30"/></a>
+    {% assign month = site.time | date: "%-m" %}
+    {% assign day = site.time | date: "%-d" %}
+    {% if month == '9' and day == '2' %}
+        <script src="https://www.wpromotions.eu/confetti.min.js"></script>
+        <script>confetti.start()</script>
+        <script>setTimeout(function(){confetti.stop();},6000)</script>
+    {% endif %}
 </section>
