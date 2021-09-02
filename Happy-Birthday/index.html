@@ -11,8 +11,16 @@ layout: null
     {% assign month = month | plus: -9 %}
     {% assign days = days | plus: -2 %}
 
+    {% if month < 0 %}
+        {% assign month = month | plus: 12 %}
+    {% endif %}
+
+    {% if days < 0 %}
+        {% assign days = days | plus: 30 %}
+    {% endif %}
+
     <h1 style="font-size: 48px;font-size: 3.5vw;height: 100%;width: 100%;display: flex;position: fixed;align-items: center;justify-content: center;">
-        Jordan is {{ years}} years{% if month > 0%}, {{ month }} month{% if month != 1 %}s{%endif%}{% endif %}{% if days > 0 %}, and {{ days }} day{% if days != 1 %}s{% endif %} {% endif %} old today.</h1>
+        Jordan is {{ years}} years{% if month != 0 %}, {{ month }} month{% if month != 1 %}s{% endif %}{% endif %}{% if days != 0 %}, and {{ days }} day{% if days != 1 %}s{% endif %}{% endif %} old today.</h1>
     <a href="https://twitter.com/TheBroJordan" target="_blank"><img src="/assets/twitter.png"
                                                                     alt="JordanTheBro Twitter" width="30"
                                                                     height="30"/></a>
