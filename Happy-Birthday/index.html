@@ -2,10 +2,19 @@
 layout: null
 ---
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e3ac570bcd24d5c84233700862ac8ae"}'></script><!-- End Cloudflare Web Analytics -->
+
+<script src="{{ root_url }}/javascripts/time_ago.js"></script>
 <section>
 
+    {% assign years = site.time | date: "%Y" %}
+    {% assign month = site.time | date: "%m" %}
+    {% assign days = site.time | date: "%d" %}
+    {% assign years = years | plus: -1967 %}
+    {% assign month = month | plus: -9 %}
+    {% assign days = days | plus: -2 %}
+
     <h1 style="font-size: 48px;font-size: 3.5vw;height: 100%;width: 100%;display: flex;position: fixed;align-items: center;justify-content: center;">
-        {% timeago 1967-9-2 %}</h1>
+        Jordan is {{ years}} years{% if month > 0%}, {{ month }} month{% if month != 1 %}s{%endif%}{% endif %}{% if days > 0 %}, and {{ days }} day{% if days != 1 %}s{% endif %} {% endif %} old today.</h1>
     <a href="https://twitter.com/TheBroJordan" target="_blank"><img src="/assets/twitter.png"
                                                                     alt="JordanTheBro Twitter" width="30"
                                                                     height="30"/></a>
