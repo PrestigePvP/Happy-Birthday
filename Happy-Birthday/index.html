@@ -4,9 +4,9 @@ layout: null
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e3ac570bcd24d5c84233700862ac8ae"}'></script><!-- End Cloudflare Web Analytics -->
 <section>
 
-    {% assign years = site.time | date: "%Y" %}
-    {% assign month = site.time | date: "%m" %}
-    {% assign days = site.time | date: "%d" %}
+    {% assign years = 'now' | date: "%Y" %}
+    {% assign month = 'now' | date: "%m" %}
+    {% assign days = 'now' | date: "%d" %}
     {% assign years = years | plus: -1967 %}
     {% assign month = month | plus: -9 %}
     {% assign days = days | plus: -2 %}
@@ -24,8 +24,8 @@ layout: null
     <a href="https://twitter.com/TheBroJordan" target="_blank"><img src="/assets/twitter.png"
                                                                     alt="JordanTheBro Twitter" width="30"
                                                                     height="30"/></a>
-    {% assign month = site.time | date: "%-m" %}
-    {% assign day = site.time | date: "%-d" %}
+    {% assign month = 'now' | date: "%-m" %}
+    {% assign day = 'now' | date: "%-d" %}
     {% if month == '9' and day == '2' %}
         <script src="https://www.wpromotions.eu/confetti.min.js"></script>
         <script>confetti.start()</script>
