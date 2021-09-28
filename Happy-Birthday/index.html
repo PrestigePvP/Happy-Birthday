@@ -1,34 +1,34 @@
 ---
 layout: null
 ---
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e3ac570bcd24d5c84233700862ac8ae"}'></script><!-- End Cloudflare Web Analytics -->
+    
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e3ac570bcd24d5c84233700862ac8ae"}'></script>
+<!-- End Cloudflare Web Analytics -->
+
 <section>
+    <h1 id="display" style="font-size: 48px; font-size: 3.5vw; height: 100%; width: 100%; display: flex; position: fixed; align-items: center; justify-content: center;"></h1>
+    <a href="https://twitter.com/TheBroJordan" target="_blank">
+        <img src="assets/twitter.png"alt="JordanTheBro Twitter" width="30"height="30"/>
+    </a>
 
-    {% assign years = 'now' | date: "%Y" %}
-    {% assign month = 'now' | date: "%m" %}
-    {% assign days = 'now' | date: "%d" %}
-    {% assign years = years | plus: -1967 %}
-    {% assign month = month | plus: -9 %}
-    {% assign days = days | plus: -2 %}
+    <script src="https://www.wpromotions.eu/confetti.min.js"></script>
+    <script>
+        const now = new Date()
 
-    {% if month < 0 %}
-        {% assign month = month | plus: 12 %}
-    {% endif %}
+        let years = now.getFullYear()  - 1967
+        let months = now.getMonth() - 8
+        let days = now.getDate() - 2
+    
+        if(months < 0) months += 12
+        if(days < 0) days += 30
 
-    {% if days < 0 %}
-        {% assign days = days | plus: 30 %}
-    {% endif %}
+        const display = document.getElementById("display")
+        display.innerHTML = `Jordan is ${years} years, ${months} months and ${days} days old today.`
 
-    <h1 style="font-size: 48px;font-size: 3.5vw;height: 100%;width: 100%;display: flex;position: fixed;align-items: center;justify-content: center;">
-        Jordan is {{ years}} years{% if month != 0 %}, {{ month }} month{% if month != 1 %}s{% endif %}{% endif %}{% if days != 0 %}, and {{ days }} day{% if days != 1 %}s{% endif %}{% endif %} old today.</h1>
-    <a href="https://twitter.com/TheBroJordan" target="_blank"><img src="/assets/twitter.png"
-                                                                    alt="JordanTheBro Twitter" width="30"
-                                                                    height="30"/></a>
-    {% assign month = 'now' | date: "%-m" %}
-    {% assign day = 'now' | date: "%-d" %}
-    {% if month == '9' and day == '2' %}
-        <script src="https://www.wpromotions.eu/confetti.min.js"></script>
-        <script>confetti.start()</script>
-        <script>setTimeout(function(){confetti.stop();},6000)</script>
-    {% endif %}
+        if(now.getMonth() == 9 && now.getDay() == 2) {
+            confetti.start()
+            setTimeout(confetti.stop, 6000)
+        }
+    </script>
 </section>
