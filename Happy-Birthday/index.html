@@ -8,7 +8,7 @@ layout: null
 
 <section>
     <h1 id="display" style="font-size: 48px; font-size: 3.5vw; height: 100%; width: 100%; display: flex; position: fixed; align-items: center; justify-content: center;"></h1>
-    <a href="https://twitter.com/TheBroJordan" target="_blank">
+    <a href="https://x.com/TheBroJordan" target="_blank">
         <img src="assets/twitter.png"alt="JordanTheBro Twitter" width="30"height="30"/>
     </a>
 
@@ -26,7 +26,7 @@ layout: null
         const display = document.getElementById("display")
         display.innerHTML = `Jordan is ${years} years, ${months} months and ${days} days old today.`
 
-        if(now.getMonth() == 9 && now.getDay() == 2) {
+        if(now.getMonth() === 8 && now.getDay() === 2) {
             confetti.start()
             setTimeout(confetti.stop, 6000)
         }
